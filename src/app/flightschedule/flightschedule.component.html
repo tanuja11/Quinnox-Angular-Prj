@@ -1,0 +1,47 @@
+ <div class="col-md-8" >
+  <div class="form-group">
+     <label for="search">Search Flights Here</label>
+
+    <input type ="text" [(ngModel)]="search"  placeholder="Source City">
+    <input type ="text" [(ngModel)]="search1"  placeholder="destn City">
+
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Flight List</h2>
+  </div>
+  <div class="panel-body">
+    <table id="example" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="100%">      <thead>
+        <tr>
+           <th> id</th>
+          <th >FLIGHT NAME</th>
+          <th >ARRIVAL TIME</th>
+          <th >DEPARTURE TIME</th>
+          <th >SOURCE CITY</th>
+          <th>DESTINATION CITY</th>
+          <th>DAY </th>
+          <th>SEAT</th>
+          <th>PRICE (Rs)</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights | filter:search:search1">
+         <td>{{flight.fid}}</td>
+          <td>{{flight.flightName}}</td>
+          <td>{{flight.arrivalTime}}</td>
+          <td>{{flight.departureTime}}</td>
+          <td>{{flight.sourceCity}}</td>
+          <td>{{flight.destinationCity}}</td>
+          <td>{{flight.day}}</td>
+          <td>{{flight.seat}}</td>
+          <td>{{flight.price}}</td>
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

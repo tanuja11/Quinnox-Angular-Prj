@@ -1,0 +1,137 @@
+  <br>
+<div class="container" style="max-width: 600px; background-color: aliceblue;">
+  <h2 class="texual" >Add Flights</h2>
+<form #flightdetailsform= "ngForm" (ngSubmit)= "addflightdetails()" >
+
+  <!-- <small [class.text-danger]= "msg.status==500" >{{msg.message}}</small> -->
+
+  <div class="form-group">
+    <label for="flightName">Flight Name</label>
+    <input type="text" class="form-control" name="flightName" [(ngModel)] = "flightdetails.flightName"
+     required #flightName="ngModel"
+     [class.is-invalid]="flightName.invalid && flightName.touched"
+     >
+     <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small> -->
+
+     <div *ngIf="flightName.errors && (flightName.invalid && flightName.touched)">
+       <small class="text-danger" *ngIf="flightName.errors.required">Flight Name is requiered</small>
+       <small class="text-danger">Entr the valid Flight Name</small>
+     </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="sourceCity">Source City</label>
+      <input type="text" class="form-control" name="sourceCity" [(ngModel)] ="flightdetails.sourceCity"
+      required #sourceCity="ngModel"
+      [class.is-invalid]="sourceCity.invalid && sourceCity.touched"
+       >
+       <small class="text-danger" [class.d-none]="sourceCity.valid || sourceCity.untouched">sourceCity is required</small>
+    </div>
+
+
+    <div class="form-group">
+      <label for="destinationCity">Destination City</label>
+      <input type="text" class="form-control" name="destinationCity" [(ngModel)] ="flightdetails.destinationCity"
+      required #destinationCity="ngModel"
+      [class.is-invalid]="destinationCity.invalid && destinationCity.touched"
+       >
+       <small class="text-danger" [class.d-none]="destinationCity.valid || destinationCity.untouched">destinationCity is required</small>
+    </div>
+
+
+
+
+  <div class="form-group">
+    <label for="arrivalTime">Arrival Time</label>
+    <input type="text" class="form-control" name="arrivalTime" [(ngModel)] ="flightdetails.arrivalTime"
+    required #arrivalTime="ngModel"
+    [class.is-invalid]="arrivalTime.invalid && arrivalTime.touched"
+     >
+     <small class="text-danger" [class.d-none]="arrivalTime.valid || arrivalTime.untouched">arrivalTime is required</small>
+  </div>
+
+  <div class="form-group">
+    <label for="departureTime">Departure Time</label>
+    <input type="text" class="form-control" name="departureTime" [(ngModel)] ="flightdetails.departureTime"
+    required #departureTime="ngModel"
+    [class.is-invalid]="departureTime.invalid && departureTime.touched"
+     >
+     <small class="text-danger" [class.d-none]="departureTime.valid || departureTime.untouched">departureTime is required</small>
+  </div>
+
+  <div class="form-group">
+    <label for="day">Day</label>
+    <input type="text" class="form-control" name="day" [(ngModel)] ="flightdetails.day"
+    required #day="ngModel"
+    [class.is-invalid]="day.invalid && day.touched"
+     >
+     <small class="text-danger" [class.d-none]="day.valid || day.untouched">departureTime is required</small>
+  </div>
+
+  <div class="form-group">
+    <label for="seat">Seat</label>
+    <input type="text" class="form-control" name="seat" [(ngModel)] ="flightdetails.seat"
+    required #seat="ngModel"
+    [class.is-invalid]="seat.invalid && seat.touched"
+     >
+     <small class="text-danger" [class.d-none]="seat.valid || seat.untouched">departureTime is required</small>
+  </div>
+
+
+  <div class="form-group">
+    <label for="price">Cost</label>
+    <input type="text" class="form-control" name="price" [(ngModel)] ="flightdetails.price"
+    required #price="ngModel"
+    [class.is-invalid]="price.invalid && price.touched"
+     >
+     <small class="text-danger" [class.d-none]="price.valid || price.untouched">departureTime is required</small>
+  </div>
+
+  <div class="checkbox">
+    <label><input type="checkbox"> Accept Conditions & Terms</label>
+  </div>
+
+
+
+
+  <button [disabled]="flightdetailsform.form.invalid" type="submit" class="btn btn-info">Add flight</button>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

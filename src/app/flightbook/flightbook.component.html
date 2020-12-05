@@ -1,0 +1,46 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Flight List</h2>
+  </div>
+  <div class="panel-body">
+    <table id="example" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="100%">      <thead>
+        <tr>
+           <th> USER id</th>
+           <th >FLIGHT NAME</th>
+           <th >ARRIVAL TIME</th>
+           <th >DEPARTURE TIME</th>
+           <th >SOURCE CITY</th>
+           <th>DESTINATION CITY</th>
+           <th>DAY</th>
+           <th>SEAT</th>
+           <th>PRICE (Rs)</th>
+          <th>Activity</th>
+
+          <!-- <th><button style='margin-right:16px' (click)="addFlights()" class="btn btn-danger">Add</button></th> -->
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights |filter:search">
+         <td>{{flight.fid}}</td>
+          <td>{{flight.flightName}}</td>
+          <td>{{flight.arrivalTime}}</td>
+          <td>{{flight.departureTime}}</td>
+          <td>{{flight.sourceCity}}</td>
+          <td>{{flight.destinationCity}}</td>
+          <td>{{flight.day}}</td>
+          <td>{{flight.seat}}</td>
+          <td>{{flight.price}}</td>
+
+           <td><button style='margin-right:16px' (click)="bookTickets(flight.fid,flight.flightName,flight.arrivalTime,flight.departureTime,flight.sourceCity,flight.destinationCity,flight.day,flight.seat,flight.price)" class="btn btn-danger">Book Now</button>
+          </td>
+
+
+            <!-- <td><button style='margin-right:16px' (click)="deleteFlight(flightdetails)" class="btn btn-danger">Delete</button>
+              <button style='margin-right:16px' (click)="updateFlight()" class="btn btn-success" style="margin-left: 10px">Edit</button>
+            </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

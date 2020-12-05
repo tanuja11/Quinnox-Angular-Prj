@@ -1,0 +1,145 @@
+/* flexx */
+
+body{
+  margin: 0;
+  padding: 0;
+  background: #f7f0f0;
+  font-family: sans-serif;
+}
+.container{
+  width: 1280px;
+  min-height: 500px;
+  background:#f7f0f0;
+  margin: 70px auto 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.container .box{
+  position:relative;
+  width: 300px;
+  height: 300px;
+  background: #f7f0f0;
+  margin: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+
+}
+
+.container .box .imgBox{
+  position: relative;
+
+}
+.container .box .imgBox img
+{
+ object-fit: cover; width: 300px; height: 300px;
+ transition: transform 2s;
+}
+
+.container.box:hover.imgBox img{
+  max-width: 100%;
+  transform: scale(1.2);
+}
+
+.container .box .details {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, o, o, 8);
+  transform: scaleY(0);
+  transition: transform .5s;
+
+}
+
+.container .box:hover .details {
+  transform: scaleY(1);
+
+
+}
+
+.container .box .details .content
+{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 15px;
+  color: #fff;
+}
+
+.container .box .details .content h2{
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  color: #f7f0f0;
+}
+
+.container .box .details .content button{
+  background: aqua;
+}
+
+.container .box .details .content p{
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  color: #f7f0f0;
+
+}
+
+.container1{
+  width: 1280px;
+  min-height: 500px;
+  background:#f7f0f0;
+  margin: 70px auto 0;
+  display: flex;
+}
+
+.container1 {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.container1 .box1{
+  position:relative;
+  width: 200px;
+  height: 200px;
+  background: #f7f0f0;
+  margin: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+
+}
+
+
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  text-align: center;
+  text-shadow: black;
+}
+
+/* .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+} */
+
+.footer {
+  position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:black;
+   background-color: black;
+   text-align: center;
+
+}

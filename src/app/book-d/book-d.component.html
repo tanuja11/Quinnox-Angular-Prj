@@ -1,0 +1,117 @@
+<div class="smart-wrap">
+  <div class="smart-forms smart-container wrap-2">
+
+    <div class="form-header header-primary">
+      <h4><i class="fa fa-calendar"></i>Make Tickets Reservations in Minutes</h4>
+    </div>
+
+    <div>
+      <br>
+    <div class="container" style="max-width: 600px; background-color: aliceblue;">
+    <form #loginform= "ngForm" (ngSubmit)= "booktickets()" >
+
+      <small class="text-danger">{{msg}}</small>
+
+      <div class="form-group">
+        <label for="flightName">Flight Name</label>
+        <input type="text" class="form-control" name="flightName" [(ngModel)] ="bookticket.flightName"
+        required #flightName="ngModel"
+        [class.is-invalid]="flightName.invalid && flightName.touched"
+         >
+         <small class="text-danger" [class.d-none]="flightName.valid || flightName.untouched">This Field is requiered</small>
+
+      </div>
+
+
+
+
+      <div class="form-group">
+        <label for="sourceCity">Flying From:</label>
+        <input type="text" class="form-control" name="sourceCity" [(ngModel)] = "bookticket.sourceCity"
+         required #sourceCity="ngModel"
+         [class.is-invalid]="sourceCity.invalid && sourceCity.touched"
+         >
+         <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small> -->
+
+         <div *ngIf="sourceCity.errors && (sourceCity.invalid && sourceCity.touched)">
+           <small class="text-danger" *ngIf="sourceCity.errors.required">This Field is requiered</small>
+           <!-- <small class="text-danger">    Entr the valid Email</small> -->
+         </div>
+        </div>
+
+      <div class="form-group">
+        <label for="destinationCity">Flying to :</label>
+        <input type="text" class="form-control" name="destinationCity" [(ngModel)] ="bookticket.destinationCity"
+        required #destinationCity="ngModel"
+        [class.is-invalid]="destinationCity.invalid && destinationCity.touched"
+         >
+         <small class="text-danger" [class.d-none]="destinationCity.valid || destinationCity.untouched">This Field is requiered</small>
+
+      </div>
+
+      <div class="form-group">
+        <label for="arrivalTime">Arrival Time :</label>
+        <input type="text" class="form-control" name="arrivalTime" [(ngModel)] ="bookticket.arrivalTime"
+        required #arrivalTime="ngModel"
+        [class.is-invalid]="arrivalTime.invalid && arrivalTime.touched"
+         >
+         <small class="text-danger" [class.d-none]="arrivalTime.valid || arrivalTime.untouched">This Field is requiered</small>
+
+      </div>
+
+      <div class="form-group">
+        <label for="departureTime">Departure Time :</label>
+        <input type="text" class="form-control" name="departureTime" [(ngModel)] ="bookticket.departureTime"
+        required #departureTime="ngModel"
+        [class.is-invalid]="departureTime.invalid && departureTime.touched"
+         >
+         <small class="text-danger" [class.d-none]="departureTime.valid || departureTime.untouched">This Field is requiered</small>
+
+      </div>
+
+      <div class="form-group">
+        <label for="day">Day :</label>
+        <input type="text" class="form-control" name="day" [(ngModel)] ="bookticket.day"
+        required #day="ngModel"
+        [class.is-invalid]="day.invalid && day.touched"
+         >
+         <small class="text-danger" [class.d-none]="day.valid || day.untouched">This Field is requiered</small>
+
+      </div>
+
+      <div class="form-group">
+        <label for="seat">Seat:</label>
+        <input type="text" class="form-control" name="seat" [(ngModel)] ="bookticket.seat"
+        required #seat="ngModel"
+        [class.is-invalid]="seat.invalid && seat.touched"
+         >
+         <small class="text-danger" [class.d-none]="seat.valid || seat.untouched">This Field is requiered</small>
+
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="arrivalTime">Arrival Time</label>
+        <input type="text" class="form-control" name="arrivalTime" [(ngModel)] ="bookticket.arrivalTime"
+        required #arrivalTime="ngModel"
+        [class.is-invalid]="arrivalTime.invalid && arrivalTime.touched"
+         >
+         <small class="text-danger" [class.d-none]="arrivalTime.valid || arrivalTime.untouched">This Field is requiered</small>
+
+      </div> -->
+
+
+
+
+
+
+     <div class="checkbox">
+        <label><input type="checkbox">Accept Conditions</label>
+      </div>
+      <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-info">Confirm</button>
+    </form>
+
+    </div>
+    </div>
+    </div>
+
+  </div>
